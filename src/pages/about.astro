@@ -1,0 +1,73 @@
+---
+import { Image } from "astro:assets";
+
+import PageLayout from "@/layouts/Base";
+import aboutImg from "@/assets/about-astro.png";
+
+const meta = {
+	title: "About",
+	description: "I'm a starter theme for Astro.build",
+};
+---
+
+<PageLayout meta={meta}>
+	<div class="space-y-6">
+		<h1 class="title">About</h1>
+		<p>
+			Welcome to my profile! I'm Amit Singh, a seasoned developer hailing from the vibrant city of
+			Delhi, India, with 6.5 years of hands-on experience in the world of web development. I pride
+			myself on my versatile skill set and deep understanding of various technologies.
+		</p>
+		<div class="flex justify-center">
+			<!-- <Image
+				src={aboutImg}
+				alt="A cartoon cactus looking at the 'Astro.build' logo"
+				loading="eager"
+				fetchpriority="high"
+			/> -->
+		</div>
+		<h2 class="sub-title">Technical Proficiency:</h2>
+		<p>
+			I specialize in front-end technologies such as CSS, HTML, and JavaScript, ensuring visually
+			appealing and responsive user interfaces. On the server side, my expertise extends to PHP and
+			Laravel, offering robust back-end solutions. I am well-versed in database management with
+			MySQL and MongoDB.
+		</p>
+		<h2 class="sub-title">Full Stack Mastery:</h2>
+		<p>
+			Navigating seamlessly between server and client-side technologies, I am proficient in Node.js
+			for server-side scripting. My Linux server management skills, coupled with experience in
+			handling Nginx and Apache servers, enable smooth and efficient deployment of web applications.
+		</p>
+		<h2 class="sub-title">Cloud Wizardry:</h2>
+		<p>
+			With a keen understanding of Git version control, I streamline the development process,
+			ensuring collaboration and code integrity. Web deployment and domain mapping are second nature
+			to me, and I take pride in delivering seamless, error-free applications to end-users.
+		</p>
+		<h2 class="sub-title">Passion for Excellence:</h2>
+		<p>
+			I approach every project with a commitment to excellence, ensuring that the end product not
+			only meets but exceeds expectations. I believe in staying updated with the latest industry
+			trends and continuously expanding my skill set to deliver cutting-edge solutions.
+		</p>
+		<p>
+			Whether it's crafting elegant front-end interfaces, architecting robust back-end systems, or
+			orchestrating cloud-based solutions, I bring a holistic approach to development. My goal is
+			not just to write code but to create digital experiences that leave a lasting impression.
+		</p>
+		<p>
+			Thank you for visiting my profile, and I look forward to the opportunity of contributing my
+			skills and expertise to your projects.
+		</p>
+		<p>
+			Check my github repositories <a
+				class="cactus-link inline-block"
+				href="https://github.com/amitsingh17051"
+				target="_blank"
+				rel="noopener noreferrer"
+				aria-label="github repository">repo</a
+			> if you like me!
+		</p>
+	</div>
+</PageLayout>
