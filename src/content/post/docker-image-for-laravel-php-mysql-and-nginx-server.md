@@ -6,12 +6,9 @@ tags: ["docker"]
 draft: false
 ---
 
-
-
 This document provides instructions for creating a Docker image that includes Laravel, PHP, MySQL, and Nginx server. The Docker image is built using the provided Dockerfiles and follows a specific set of steps to configure the environment.
 
-Dockerfile 1
-------------
+## Dockerfile 1
 
 The first Dockerfile sets up a container with PHP, MySQL, Nginx, and Laravel installed. It uses the official PHP base image \`php:7.4-fpm\` as the starting point. The following steps are performed:
 
@@ -21,7 +18,7 @@ The first Dockerfile sets up a container with PHP, MySQL, Nginx, and Laravel ins
 
 3\. The cache is cleared to optimize the container’s size.
 
-4\. PHP extensions required by Laravel (pdo\_mysql, mbstring, exif, pcntl, bcmath, gd) are installed using \`docker-php-ext-install\`.
+4\. PHP extensions required by Laravel (pdo_mysql, mbstring, exif, pcntl, bcmath, gd) are installed using \`docker-php-ext-install\`.
 
 5\. Composer is installed to manage the Laravel application’s dependencies.
 
@@ -37,8 +34,7 @@ The first Dockerfile sets up a container with PHP, MySQL, Nginx, and Laravel ins
 
 11\. The supervisor process is run to manage the Nginx and PHP-FPM processes.
 
-Dockerfile 2
-------------
+## Dockerfile 2
 
 The second Dockerfile defines the Docker image specifically for the Laravel application, PHP, MySQL, and Nginx server. Here’s a breakdown of the steps:
 
@@ -64,8 +60,7 @@ The second Dockerfile defines the Docker image specifically for the Laravel appl
 
 11\. PHP-FPM is started.
 
-Building and Running the Docker Image
--------------------------------------
+## Building and Running the Docker Image
 
 To build the Docker image for Laravel, PHP, MySQL, and Nginx server, follow these steps:
 
@@ -99,20 +94,20 @@ Make sure the “laravel-container” is listed and has the status “Up”.
 
 Now you should have a Docker container running with Laravel, PHP, MySQL, and Nginx server. You can access the application by visiting [http://localhost](http://localhost) in your web browser.
 
-Verifying the Docker Container
-------------------------------
+## Verifying the Docker Container
 
 To verify that the Laravel, PHP, MySQL, and Nginx server are running correctly in the Docker container, follow these steps:
 
 1\. Install Docker: If Docker is not already installed on your system, download and install it from the official Docker website ([https://www.docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop)).
 
 2\. Build the Docker image: Navigate to the directory containing the Dockerfile and execute the following command to build the Docker image:
+
 ```
 docker build -t laravel-app .
 ```
+
 3\. Run the Docker container: Start the Docker container using the following command:
 
 docker run -d -p 80:80 - name laravel-container laravel-app
 
 4\. Verify the container is running: Use the
-
