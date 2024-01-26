@@ -1,7 +1,7 @@
 ---
 title: "Connect godaddy domain to cloudflare"
 description: "Connecting your GoDaddy domain to Cloudflare involves a few steps. Cloudflare free plan offers essential services like CDN and security features."
-publishDate: "26 Jan 2024"
+publishDate: "24 Jan 2024"
 tags: ["Cloudflare", "DNS", "Domain"]
 draft: false
 ---
