@@ -96,13 +96,13 @@ ssh -i aws-key.pem ec2-user@ec2-instance-public-IPv4 address
     yum info package_name
     ```
     
-5.  Start the Apache web server.
+5.  Start the nginx web server.
     
     ```plaintext
     [ec2-user ~]$ sudo systemctl start nginx
     ```
     
-6.  Use the **systemctl** command to configure the Apache web server to start at each system boot.
+6.  Use the **systemctl** command to configure the nginx web server to start at each system boot.
     
     ```plaintext
     [ec2-user ~]$ sudo systemctl enable nginx
@@ -120,5 +120,33 @@ ssh -i aws-key.pem ec2-user@ec2-instance-public-IPv4 address
 1.  Create a default.conf file under `/etc/nginx/conf.d` dir
     
     ```plaintext
-    [ec2-user ~]$ echo "<?php phpinfo(); ?>" > /var/www/html/phpinfo.php
+    server {
+        listen 80;
+        server_name your_domain.com;
+
+        root /var/www/your_domain;
+        index index.php index.html index.htm;
+
+        location / {
+            try_files $uri $uri/ /index.php?$query_string;
+        }
+
+        location ~ \.php$ {
+            include snippets/fastcgi-php.conf;
+            fastcgi_pass unix:/run/php/php8.2-fpm.sock;
+            fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+            include fastcgi_params;
+        }
+
+        location ~ /\.ht {
+            deny all;
+        }
+    }
     ```
+5.  Restart the nginx web server and you are good to go.
+    
+    ```plaintext
+    [ec2-user ~]$ sudo systemctl restart nginx
+    ```
+
+
