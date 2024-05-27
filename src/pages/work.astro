@@ -1,0 +1,139 @@
+---
+import { Image } from "astro:assets";
+
+import PageLayout from "@/layouts/Base";
+import aboutImg from "@/assets/about-astro.png";
+
+const meta = {
+	title: "Work",
+	description: "I'm a starter theme for Astro.build",
+};
+
+const projectsData = [
+	{
+		project_title: "Canon Edge",
+		project_img: "edge.canon.co.in.png",
+		project_url: "https://edge.canon.co.in/",
+		project_tags: ["PHP", "Laravel", "mysql", "AWS EC2", "API", "Backend", "VUEJS"],
+		project_info: "",
+	},
+	{
+		project_title: "Canon Contactus",
+		project_img: "edge.canon.co.in_contactus_.png",
+		project_url: "https://edge.canon.co.in/contactus",
+		project_tags: ["PHP", "Laravel", "mysql", "AWS EC2", "API", "Backend", "VUEJS"],
+		project_info: "",
+	},
+	{
+		project_title: "Canon Service Networks",
+		project_img: "edge.canon.co.in_service-networks_.png",
+		project_url: "https://edge.canon.co.in/service-networks",
+		project_tags: ["PHP", "Laravel", "mysql", "AWS EC2", "API", "Backend", "VUEJS"],
+		project_info: "",
+	},
+	{
+		project_title: "Canon Care Pack",
+		project_img: "edge.canon.co.in_canoncaresalespack_.png",
+		project_url: "https://edge.canon.co.in/canoncaresalespack",
+		project_tags: ["PHP", "Laravel", "mysql", "AWS EC2", "API", "Backend", "VUEJS"],
+		project_info: "",
+	},
+    {
+		project_title: "Dynamixgroup",
+		project_img: "dynamixgroup.co.in_.png",
+		project_url: "https://dynamixgroup.co.in",
+		project_tags: ["Nodejs", "MongoDB", "AWS EC2", "API", "Backend", "ReactJS"],
+		project_info: "",
+	},
+    {
+		project_title: "Zoyasbooks",
+		project_img: "zoyasbooks.com_.png",
+		project_url: "https://zoyasbooks.com",
+		project_tags: ["PHP", "Laravel", "mysql", "AWS EC2", "API", "Backend"],
+		project_info: "",
+	},
+    {
+		project_title: "Merinoindia",
+		project_img: "www.merinoindia.com_.png",
+		project_url: "https://merinoindia.com",
+		project_tags: ["PHP", "Laravel", "mysql", "AWS EC2", "API", "Backend"],
+		project_info: "",
+	},
+    {
+		project_title: "Artful",
+		project_img: "artful.website_.png",
+		project_url: "https://artful.website",
+		project_tags: ["PHP", "Wordpress", "mysql", "AWS EC2", "E-commerce"],
+		project_info: "",
+	},
+    {
+		project_title: "Goldbank",
+		project_img: "goldbank.ie_.png",
+		project_url: "https://goldbank.ie",
+		project_tags: ["API", "PHP", "Wordpress", "mysql", "AWS EC2", "E-commerce"],
+		project_info: "",
+	},
+    {
+		project_title: "Huubr",
+		project_img: "huubr.com_.png",
+		project_url: "https://huubr.com",
+		project_tags: ["PHP", "Wordpress", "mysql", "AWS EC2", "B2B"],
+		project_info: "",
+	},
+    {
+		project_title: "Homeschool",
+		project_img: "homeschool.ie_.png",
+		project_url: "https://homeschool.ie",
+		project_tags: ["PHP", "Wordpress", "mysql", "AWS EC2", "LMS"],
+		project_info: "",
+	},
+    {
+		project_title: "loveirishtours",
+		project_img: "loveirishtours.com_.png",
+		project_url: "https://loveirishtours",
+		project_tags: ["PHP", "Wordpress", "mysql", "AWS EC2", "B2B"],
+		project_info: "",
+	},
+];
+---
+
+<PageLayout meta={meta}>
+	<div class="space-y-6">
+		<div class="container mx-auto p-4">
+			<h1 class="mb-8 text-center text-3xl font-bold">My Work</h1>
+			<div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-2">
+				<!-- Project Card 1 -->
+				{
+					projectsData.map((object) => (
+                    <div class="overflow-hidden rounded-lg bg-white shadow-md">
+                        <img
+                            src=`/src/assets/projects/${object.project_img}`
+                            alt="Project Image"
+                            class="h-48 w-full object-cover"
+                        />
+                        <div class="p-4">
+                            <a href={object.project_url}><h2 class="mb-2 text-xl font-semibold">{object.project_title}</h2></a>
+                            {/* <p class="mb-4 text-gray-700">Brief description of the project.</p> */}
+                            <div>
+                                <h3 class="text-sm font-medium text-gray-900">Stack:</h3>
+                                <div class="flex flex-wrap">
+                                    {
+                                        object.project_tags.map((tags) => (
+                                            <span
+                                            class="mr-2 rounded bg-gray-200 px-2.5 py-0.5 text-xs font-semibold text-gray-800"
+                                            >{tags}</span>
+                                        ))
+                                    }
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+					))
+				}
+				
+				<!-- Add more project cards here -->
+			</div>
+		</div>
+	</div>
+</PageLayout>
