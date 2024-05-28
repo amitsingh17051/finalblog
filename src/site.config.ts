@@ -19,10 +19,7 @@ export const siteConfig: SiteConfig = {
 			month: "short",
 			year: "numeric",
 		},
-	},
-	webmentions: {
-		link: "https://webmention.io/astro-cactus.chriswilliams.dev/webmention",
-	},
+	}
 };
 
 // Used to generate links in both the Header & Footer.
@@ -42,5 +39,9 @@ export const menuLinks: Array<{ title: string; path: string }> = [
 	{
 		title: "Work",
 		path: "/work/",
+	},
+	{
+		title: "Resume",
+		path: "https://docs.google.com/document/d/1sb1jhq-40pnbYFjTTzVzU2209SUmeKCZJmpYGcC_8JM/edit",
 	},
 ];
